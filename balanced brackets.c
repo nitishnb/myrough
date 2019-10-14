@@ -75,11 +75,6 @@ int main()
             {
                 pop();
             }
-            else
-            {
-                printf("\nNO");
-                return 0;
-            }
         }
     }
     if(isEmpty())

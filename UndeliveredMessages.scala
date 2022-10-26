@@ -7,10 +7,10 @@ object UndeliveredMessages {
     println("Pub/Sub notifications for Cloud Storage!")
 
     val metricServiceClient = MetricServiceClient.create
-    val projectId = "marksmng"
+    val projectId = "PROJECT_ID"
     val name = ProjectName.of(projectId)
 
-    // Restrict time to last 1 minutes
+    // Restrict time to last 100 Seconds (over 1 minute)
     val startMillis = System.currentTimeMillis - (100 * 1000)
     val interval = TimeInterval.newBuilder
       .setStartTime(Timestamps.fromMillis(startMillis))

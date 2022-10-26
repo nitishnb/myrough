@@ -27,7 +27,6 @@ object UndeliveredMessages {
     val response = metricServiceClient.listTimeSeries(request)
 
     response.iterateAll().forEach(subscriptionData => {
-      print(subscriptionData)
       val subscription = subscriptionData.getResource.getLabelsMap.get("subscription_id")
       val numberOrMessages = subscriptionData.getPointsList.get(0).getValue().getInt64Value()
       println(subscription + " has " + numberOrMessages + " messages ")
